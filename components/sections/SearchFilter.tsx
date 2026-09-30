@@ -98,8 +98,8 @@ export default function SearchFilter() {
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row gap-6 mb-10 p-6 bg-bg border border-border"
         >
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted">
+          <div className="flex flex-col gap-2" role="group" aria-label="Filter by property type">
+            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted" aria-hidden="true">
               Property Type
             </span>
             <div className="flex flex-wrap gap-2">
@@ -108,8 +108,8 @@ export default function SearchFilter() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted">
+          <div className="flex flex-col gap-2" role="group" aria-label="Filter by price range">
+            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted" aria-hidden="true">
               Price Range
             </span>
             <div className="flex flex-wrap gap-2">
@@ -118,8 +118,8 @@ export default function SearchFilter() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted">
+          <div className="flex flex-col gap-2" role="group" aria-label="Filter by number of bedrooms">
+            <span className="font-body text-xs font-medium tracking-widest uppercase text-text-muted" aria-hidden="true">
               Bedrooms
             </span>
             <div className="flex flex-wrap gap-2">
@@ -130,7 +130,7 @@ export default function SearchFilter() {
           </div>
         </motion.div>
 
-        <p className="font-body text-sm text-text-secondary mb-8">
+        <p className="font-body text-sm text-text-secondary mb-8" aria-live="polite" aria-atomic="true">
           Showing <span className="font-medium text-text-primary">{filtered.length}</span> of{' '}
           {properties.length} properties
         </p>

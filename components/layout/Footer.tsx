@@ -35,7 +35,7 @@ export default function Footer() {
                   className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition-colors"
                   aria-label={label}
                 >
-                  <Icon size={16} />
+                  <Icon size={16} aria-hidden="true" />
                 </a>
               ))}
             </div>

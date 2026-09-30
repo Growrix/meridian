@@ -19,7 +19,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
       onBlur={() => setFlipped(false)}
       tabIndex={0}
       role="button"
-      aria-label={`${member.name} — hover or focus to see contact details`}
+      aria-label={`${member.name}, ${member.title} — press Enter or focus to see contact details`}
     >
       <motion.div
         animate={{ rotateY: flipped ? 180 : 0 }}
@@ -65,15 +65,17 @@ export default function TeamCard({ member }: { member: TeamMember }) {
             <a
               href={`mailto:${member.email}`}
               className="flex items-center gap-3 text-white/80 hover:text-primary transition-colors text-sm font-body"
+              aria-label={`Email ${member.name}`}
             >
-              <Mail size={16} />
+              <Mail size={16} aria-hidden="true" />
               {member.email}
             </a>
             <a
               href={`tel:${member.phone}`}
               className="flex items-center gap-3 text-white/80 hover:text-primary transition-colors text-sm font-body"
+              aria-label={`Call ${member.name}`}
             >
-              <Phone size={16} />
+              <Phone size={16} aria-hidden="true" />
               {member.phone}
             </a>
           </div>

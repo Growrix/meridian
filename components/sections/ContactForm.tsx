@@ -215,7 +215,7 @@ export default function ContactForm() {
                   { Icon: Mail, label: 'Email', content: 'hello@meridianestates.com', href: 'mailto:hello@meridianestates.com' },
                 ].map(({ Icon, label, content, href }) => (
                   <div key={label} className="flex items-start gap-4">
-                    <Icon size={18} className="text-primary mt-0.5 shrink-0" />
+                    <Icon size={18} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                     <div>
                       <p className="font-body text-sm font-medium text-text-primary">{label}</p>
                       {href ? (

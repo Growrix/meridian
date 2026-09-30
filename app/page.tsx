@@ -9,7 +9,7 @@ import ContactForm from '@/components/sections/ContactForm'
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Navbar />
       <Hero />
       <FeaturedProperties />

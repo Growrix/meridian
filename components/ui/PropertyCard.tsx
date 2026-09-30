@@ -63,7 +63,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           <span className="font-body text-sm font-medium tracking-widest uppercase text-dark-bg">
             View Property
           </span>
-          <ArrowRight size={16} className="text-dark-bg" />
+          <ArrowRight size={16} className="text-dark-bg" aria-hidden="true" />
         </div>
       </div>
 
@@ -80,15 +80,15 @@ export default function PropertyCard({ property }: PropertyCardProps) {
         </p>
         <div className="flex items-center gap-4 border-t border-border pt-4">
           <span className="flex items-center gap-1.5 text-text-secondary text-sm">
-            <Bed size={14} />
+            <Bed size={14} aria-hidden="true" />
             {property.beds} Beds
           </span>
           <span className="flex items-center gap-1.5 text-text-secondary text-sm">
-            <Bath size={14} />
+            <Bath size={14} aria-hidden="true" />
             {property.baths} Baths
           </span>
           <span className="flex items-center gap-1.5 text-text-secondary text-sm">
-            <Square size={14} />
+            <Square size={14} aria-hidden="true" />
             {property.sqft.toLocaleString()} sqft
           </span>
         </div>

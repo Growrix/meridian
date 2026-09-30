@@ -7,9 +7,9 @@ export default function TestimonialCard({ testimonial }: { testimonial: Testimon
       <span className="font-display text-8xl text-primary leading-none mb-4" aria-hidden="true">
         &ldquo;
       </span>
-      <div className="flex gap-1 mb-6" aria-label={`${testimonial.rating} out of 5 stars`}>
+      <div className="flex gap-1 mb-6" aria-label={`${testimonial.rating} out of 5 stars`} role="img">
         {Array.from({ length: testimonial.rating }).map((_, i) => (
-          <Star key={i} size={16} className="fill-primary text-primary" />
+          <Star key={i} size={16} className="fill-primary text-primary" aria-hidden="true" />
         ))}
       </div>
       <blockquote className="font-display text-xl md:text-2xl font-light text-white leading-relaxed mb-8">

@@ -73,7 +73,11 @@ export default function Testimonials() {
           </motion.h2>
         </motion.div>
 
-        <div className="relative overflow-hidden min-h-[340px] flex items-center">
+        <div
+          className="relative overflow-hidden min-h-[340px] flex items-center"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={current}
@@ -84,8 +88,6 @@ export default function Testimonials() {
               exit="exit"
               transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
               className="w-full"
-              aria-live="polite"
-              aria-atomic="true"
             >
               <TestimonialCard testimonial={testimonials[current]} />
             </motion.div>
@@ -98,7 +100,7 @@ export default function Testimonials() {
             className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition-colors cursor-pointer"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={18} />
+            <ChevronLeft size={18} aria-hidden="true" />
           </button>
 
           <div className="flex gap-2" role="tablist" aria-label="Testimonial navigation">
@@ -123,7 +125,7 @@ export default function Testimonials() {
             className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition-colors cursor-pointer"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={18} />
+            <ChevronRight size={18} aria-hidden="true" />
           </button>
         </div>
       </div>
