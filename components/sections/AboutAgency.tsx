@@ -4,12 +4,19 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import TeamCard from '@/components/ui/TeamCard'
-import { team, stats } from '@/lib/data'
+import { team, stats, type AgencyStat } from '@/lib/data'
 import { useFadeUpVariants, useStaggerContainerVariants } from '@/hooks/useScrollAnimation'
+import { useCountUp } from '@/hooks/useCountUp'
 
-function StatCounter({ value, label }: { value: string; label: string }) {
+function StatCounter({ stat }: { stat: AgencyStat }) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  const counted = useCountUp({
+    target: stat.countTo,
+    decimals: stat.countDecimals ?? 0,
+    active: isInView,
+    duration: 2,
+  })
 
   return (
     <div ref={ref} className="text-center">
@@ -19,9 +26,9 @@ function StatCounter({ value, label }: { value: string; label: string }) {
         transition={{ duration: 0.6 }}
         className="font-display text-3xl md:text-4xl font-bold text-primary"
       >
-        {value}
+        {stat.countPrefix ?? ''}{counted}{stat.countSuffix ?? ''}
       </motion.p>
-      <p className="font-body text-sm text-text-secondary tracking-wide mt-1">{label}</p>
+      <p className="font-body text-sm text-text-secondary tracking-wide mt-1">{stat.label}</p>
     </div>
   )
 }
@@ -97,11 +104,7 @@ export default function AboutAgency() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 py-12 border-y border-border">
           {stats.map((stat) => (
-            <StatCounter
-              key={stat.label}
-              value={`${stat.value}${stat.suffix ?? ''}`}
-              label={stat.label}
-            />
+            <StatCounter key={stat.label} stat={stat} />
           ))}
         </div>
 

@@ -42,6 +42,10 @@ export interface AgencyStat {
   label: string
   value: string
   suffix?: string
+  countTo: number
+  countDecimals?: number
+  countPrefix?: string
+  countSuffix?: string
 }
 
 export const properties: Property[] = [
@@ -275,8 +279,8 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const stats: AgencyStat[] = [
-  { label: 'Properties Sold', value: '350', suffix: '+' },
-  { label: 'Total Transaction Volume', value: '$2.4B' },
-  { label: 'Years of Excellence', value: '12' },
-  { label: 'Average Client Rating', value: '4.9', suffix: '★' },
+  { label: 'Properties Sold', value: '350', suffix: '+', countTo: 350, countSuffix: '+' },
+  { label: 'Total Transaction Volume', value: '$2.4B', countTo: 2.4, countDecimals: 1, countPrefix: '$', countSuffix: 'B' },
+  { label: 'Years of Excellence', value: '12', countTo: 12 },
+  { label: 'Average Client Rating', value: '4.9', suffix: '★', countTo: 4.9, countDecimals: 1, countSuffix: '★' },
 ]
