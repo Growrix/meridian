@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/providers/LenisProvider'
 import GrainOverlay from '@/components/ui/GrainOverlay'
+import CustomCursor from '@/components/ui/CustomCursor'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <GrainOverlay />
+        <CustomCursor />
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

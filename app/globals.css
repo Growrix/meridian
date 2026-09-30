@@ -44,6 +44,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide native cursor on pointer devices — custom cursor takes over */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+}
+
 /* Focus ring — gold, visible on all backgrounds */
 :focus-visible {
   outline: 2px solid var(--color-primary);
