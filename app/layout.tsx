@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
+import LenisProvider from '@/providers/LenisProvider'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -80,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   )
