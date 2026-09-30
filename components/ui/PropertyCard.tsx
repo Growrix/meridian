@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Bed, Bath, Square, ArrowRight } from 'lucide-react'
@@ -26,18 +27,31 @@ function formatPrice(price: number): string {
 
 export default function PropertyCard({ property }: PropertyCardProps) {
   const shouldReduce = useReducedMotion()
+  const ref = useRef<HTMLElement>(null)
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
     <motion.article
+      ref={ref}
       whileHover={
-        shouldReduce ? {} : { y: -8, boxShadow: '0 20px 60px rgba(0,0,0,0.12)' }
+        shouldReduce ? {} : {
+          y: -8,
+          boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 0 40px rgba(201,169,110,0.15)',
+        }
       }
       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       className="bg-surface rounded-sm overflow-hidden group cursor-pointer"
     >
     <Link href={`/properties/${property.id}`} className="block" aria-label={`View ${property.address}`}>
-      {/* Image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '8/5' }}>
+      {/* Image with clip-path reveal */}
+      <motion.div
+        className="relative overflow-hidden"
+        style={{ aspectRatio: '8/5' }}
+        animate={shouldReduce ? {} : {
+          clipPath: isInView ? 'inset(0 0% 0 0)' : 'inset(0 100% 0 0)',
+        }}
+        transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+      >
         <motion.div
           whileHover={shouldReduce ? {} : { scale: 1.04 }}
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
@@ -67,7 +81,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           </span>
           <ArrowRight size={16} className="text-dark-bg" aria-hidden="true" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="p-6">

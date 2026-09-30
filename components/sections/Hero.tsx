@@ -23,8 +23,14 @@ export default function Hero() {
       style={{ minHeight: '100svh' }}
       aria-label="Hero"
     >
-      {/* Parallax background */}
-      <motion.div style={{ y: parallaxY }} className="absolute inset-0 scale-110">
+      {/* Parallax background with clip-path reveal */}
+      <motion.div
+        style={{ y: parallaxY }}
+        initial={shouldReduce ? false : { clipPath: 'inset(0 100% 0 0)' }}
+        animate={{ clipPath: 'inset(0 0% 0 0)' }}
+        transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
+        className="absolute inset-0 scale-110"
+      >
         <Image
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
           alt=""
