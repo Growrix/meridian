@@ -9,7 +9,13 @@ export interface Property {
   baths: number
   sqft: number
   image: string
+  images?: string[]
   type: 'House' | 'Apartment' | 'Villa'
+  description: string
+  features: string[]
+  yearBuilt: number
+  parking: string
+  lotSize?: string
 }
 
 export interface TeamMember {
@@ -50,7 +56,17 @@ export const properties: Property[] = [
     baths: 6,
     sqft: 7200,
     image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&q=80',
+    ],
     type: 'House',
+    description: 'An architectural masterpiece perched in the coveted hills of Bel Air, this 7,200 sq ft estate offers sweeping canyon and city views from nearly every room. Designed by noted LA architect James Harmon, the home blends warm natural materials with contemporary lines — floor-to-ceiling Fleetwood doors, Calacatta marble throughout, and a chef\'s kitchen anchored by custom Bulthaup cabinetry. The resort-style grounds feature a zero-edge infinity pool, a detached 1-bed guest house, and mature olive trees for absolute privacy.',
+    features: ['Infinity pool & spa', 'Home theatre', 'Wine cellar (1,200 bottles)', 'Smart home automation', 'Guest house', 'Chef\'s kitchen', '4-car garage', 'Canyon views'],
+    yearBuilt: 2019,
+    parking: '4-car garage',
+    lotSize: '0.72 acres',
   },
   {
     id: 'prop-002',
@@ -63,7 +79,17 @@ export const properties: Property[] = [
     baths: 4,
     sqft: 3800,
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
+      'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=1200&q=80',
+    ],
     type: 'House',
+    description: 'Steps from the sand on Santa Monica\'s iconic Oceanfront Walk, this newly completed coastal contemporary offers unobstructed Pacific views from its upper-level primary suite and a rooftop terrace designed for year-round entertaining. The 3,800 sq ft interior features white oak floors, a Venetian plaster fireplace, and Thermador appliances in an open-plan kitchen that flows seamlessly to the shaded outdoor living room. Bike to Abbot Kinney or walk to the Santa Monica Pier — the California lifestyle begins at your front door.',
+    features: ['Rooftop terrace', 'Ocean views', 'Outdoor kitchen', 'Thermador appliances', 'White oak floors', 'Fireplace', '2-car garage', 'Smart home'],
+    yearBuilt: 2024,
+    parking: '2-car garage',
+    lotSize: '3,200 sq ft lot',
   },
   {
     id: 'prop-003',
@@ -76,7 +102,17 @@ export const properties: Property[] = [
     baths: 3,
     sqft: 2900,
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&q=80',
+      'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=1200&q=80',
+    ],
     type: 'Villa',
+    description: 'Tucked at the end of a quiet cul-de-sac in Beverly Hills Post Office, this Mediterranean-inspired villa combines old-world elegance with thoughtfully updated interiors. The 2,900 sq ft floor plan offers three generous en-suite bedrooms, a formal living room with coffered ceilings, and a renovated kitchen with Carrara marble countertops. French doors open onto a private courtyard with a manicured garden and built-in BBQ — ideal for intimate al fresco dining. Just minutes to Rodeo Drive and Beverly Hills\' finest restaurants.',
+    features: ['Private courtyard', 'Coffered ceilings', 'Carrara marble', 'Built-in BBQ', 'French doors', 'Updated kitchen', '2-car garage', 'Cul-de-sac privacy'],
+    yearBuilt: 2008,
+    parking: '2-car garage',
+    lotSize: '0.18 acres',
   },
   {
     id: 'prop-004',
@@ -89,7 +125,17 @@ export const properties: Property[] = [
     baths: 5,
     sqft: 5100,
     image: 'https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=1200&q=80',
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
+    ],
     type: 'House',
+    description: 'A rare beachfront compound on Malibu\'s storied "Billionaire\'s Beach," this 5,100 sq ft estate sits directly on the sand with its own private stretch of beach. Four generous bedroom suites — each with ocean views — surround a central living space defined by 20-foot ceilings, a dramatic stone fireplace, and walls of glass that dissolve the boundary between inside and out. The lower level includes a gym, a wine room, and a media lounge that opens to the beach patio. A trophy property in one of the world\'s most coveted addresses.',
+    features: ['Direct beach access', '20-ft ceilings', 'Home gym', 'Wine room', 'Media lounge', 'Stone fireplace', '3-car carport', 'Ocean views'],
+    yearBuilt: 2015,
+    parking: '3-car carport',
+    lotSize: '60 ft beach frontage',
   },
   {
     id: 'prop-005',
@@ -102,7 +148,16 @@ export const properties: Property[] = [
     baths: 2,
     sqft: 1850,
     image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80',
+      'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80',
+    ],
     type: 'Apartment',
+    description: 'On the 32nd floor of the architecturally acclaimed Wilshire Tower, this sky-high two-bedroom residence commands 270-degree views from downtown\'s glittering skyline to the Santa Monica Mountains. The 1,850 sq ft open floor plan features polished concrete floors, floor-to-ceiling glass, and a chef\'s kitchen with Miele appliances. Residents enjoy 24-hour concierge, a rooftop pool and terrace, a state-of-the-art fitness center, and valet parking. Cultural venues, award-winning restaurants, and Grand Central Market are steps away.',
+    features: ['270° city views', '32nd floor', 'Concierge 24/7', 'Rooftop pool', 'Fitness center', 'Miele appliances', 'Valet parking', 'EV charging'],
+    yearBuilt: 2020,
+    parking: 'Valet + 2 deeded spaces',
   },
   {
     id: 'prop-006',
@@ -115,7 +170,17 @@ export const properties: Property[] = [
     baths: 7,
     sqft: 9400,
     image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+      'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200&q=80',
+    ],
     type: 'House',
+    description: 'One of Brentwood\'s most significant estates — sold by Meridian Estates in 12 days at full asking price. This 9,400 sq ft compound occupies a gated, tree-lined lot and offers six bedroom suites, a grand formal living room with 14-foot ceilings, a professional chef\'s kitchen, and a dedicated screening room. The meticulously landscaped grounds include a 50-foot lap pool, a full outdoor kitchen, and a self-contained 2-bed staff or guest wing. An irreplaceable Brentwood address that sets the standard for compound living.',
+    features: ['50-ft lap pool', 'Screening room', 'Outdoor kitchen', 'Staff quarters', '14-ft ceilings', 'Chef\'s kitchen', '4-car garage', 'Gated & private'],
+    yearBuilt: 2012,
+    parking: '4-car garage + motor court',
+    lotSize: '1.1 acres',
   },
 ]
 

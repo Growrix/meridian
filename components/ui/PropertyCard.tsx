@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Bed, Bath, Square, ArrowRight } from 'lucide-react'
 import type { Property } from '@/lib/data'
 
@@ -34,6 +35,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       className="bg-surface rounded-sm overflow-hidden group cursor-pointer"
     >
+    <Link href={`/properties/${property.id}`} className="block" aria-label={`View ${property.address}`}>
       {/* Image */}
       <div className="relative overflow-hidden" style={{ aspectRatio: '8/5' }}>
         <motion.div
@@ -93,6 +95,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           </span>
         </div>
       </div>
+    </Link>
     </motion.article>
   )
 }
