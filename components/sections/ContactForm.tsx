@@ -92,7 +92,7 @@ export default function ContactForm() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
           <motion.p variants={fadeUp} className="font-body text-xs font-medium tracking-[0.3em] uppercase text-primary mb-3">
@@ -202,7 +202,7 @@ export default function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-2 flex flex-col gap-8"
           >

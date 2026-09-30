@@ -73,7 +73,7 @@ export default function SearchFilter() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, margin: '-100px' }}
           className="mb-12"
         >
           <motion.p
@@ -94,7 +94,7 @@ export default function SearchFilter() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row gap-6 mb-10 p-6 bg-bg border border-border"
         >

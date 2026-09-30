@@ -16,7 +16,7 @@ export default function FeaturedProperties() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, margin: '-100px' }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14"
         >
           <div>
@@ -46,7 +46,7 @@ export default function FeaturedProperties() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {properties.map((property) => (
